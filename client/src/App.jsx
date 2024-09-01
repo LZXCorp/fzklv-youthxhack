@@ -1,22 +1,16 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './assets/App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import Home from "./pages/Home";
 
-  return (
-    <>
-      <h1>Youth x Hackathon Website</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-    </>
-  )
+function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Home />} />
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
 export default App
