@@ -7,7 +7,7 @@ function Onboarding() {
     return (
         <div className="content-div">
             <h1>Onboarding</h1>
-            <StepsProgressBar step={currStep} />
+            <StepsProgressBar step={currStep} total_steps={3} />
         </div>
     )
 }

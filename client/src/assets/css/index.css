@@ -14,6 +14,7 @@
 .light-theme {
   --primary-color: light-dark(#000, #fff);
   --secondary-color: #eeeeee;
+  --opposite-color: #000;
 
   color: light-dark(#000, #000);
   background-color: var(--primary-color);
@@ -22,6 +23,8 @@
 .dark-theme {
   --primary-color: light-dark(#fff, #080808);
   --secondary-color: #242424;
+  --opposite-color: #eeeeee;
+
   color: light-dark(#000, #fff);
   background-color: var(--primary-color);
 }
