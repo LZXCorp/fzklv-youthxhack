@@ -1,0 +1,6 @@
+services:
+  fzklv-frontend:
+    build: .
+    container_name: fzklv-frontend
+    ports:
+      - 3000:80
