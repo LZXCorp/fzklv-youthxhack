@@ -19,8 +19,8 @@
 
 .dark-theme {
   color: light-dark(#000, #fff);
-  background-color: light-dark(#fff, #121212);
-  --secondary-color: #111111
+  background-color: light-dark(#fff, #080808);
+  --secondary-color: #181818
 }
 
 * {
@@ -41,16 +41,10 @@ h1 {
   font-size: 2rem;
   text-align: center;
   line-height: 1.1;
-  color: #fff;
 }
 
 .home {
   padding: 0 0 10px 0;
-}
-
-
-.subtext {
-  color: #fff;
 }
 
 h2 {
@@ -185,6 +179,10 @@ tr {
 
 .content-div {
   margin: 2rem;
+}
+
+.home-header {
+  color: white;
 }
 
 @media (prefers-color-scheme: light) {
