@@ -1,0 +1,15 @@
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.progress-container::before {
+    content: "";
+    position: absolute;
+    background-color: #ddd;
+    height: 4px;
+    width: 100%;
+    top: 50%;
+}

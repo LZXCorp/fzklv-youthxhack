@@ -33,6 +33,7 @@ function App() {
                             element={<RegistrationPage event={event} />}
                         />
                     ))}
+                    <Route path="/onboarding" element={<Onboarding />} />
                 </>
                 {/* ) : ( */}
                 <>
