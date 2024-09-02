@@ -133,7 +133,7 @@ function Events() {
                                             color="text.secondary">
                                             <AccessTime sx={{ mr: 1 }} />
                                             <Typography>
-                                                {dayjs(event.eventDate).format('YYYY-MM-DD')} {event.startTime} - {event.endTime}
+                                                {event.eventDate} {event.startTime} - {event.endTime}
                                             </Typography>
                                         </Box>
                                         <Typography sx={{ whiteSpace: 'pre-wrap' }}>
