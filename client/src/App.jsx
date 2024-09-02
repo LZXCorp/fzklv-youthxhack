@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Index from "./pages/Index";
 import Events from "./pages/Events";
-// import LanguageToggle from "./components/LanguageToggle";
-// import Text from "./components/Text";
+import Navbar from "./pages/Navbar";
 
 function App() {
     return (
         <BrowserRouter>
+            <Navbar />
             <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/events" element={<Events />} />

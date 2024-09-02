@@ -1,17 +1,10 @@
-import Navbar from './Navbar'
 import '../assets/index.css'
-import { Route, Routes } from 'react-router-dom'
-import Home from './Home'
 
-function App() {
+import Text from '../components/Text'
+
+function Index() {
     return (
         <div>
-            <Navbar />
-<<<<<<< Updated upstream
-            <Routes>
-                <Route path="/" element={<Home />} />
-            </Routes>
-=======
             <header>
                 <h1 className="home">
                     <Text
@@ -71,9 +64,8 @@ function App() {
             <footer>
                 <p>&copy; 2024 My Simple Home Page. All rights reserved.</p>
             </footer>
->>>>>>> Stashed changes
         </div>
     )
 }
 
-export default App
+export default Index

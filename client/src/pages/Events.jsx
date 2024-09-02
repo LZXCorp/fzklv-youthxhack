@@ -1,9 +1,7 @@
-import Navbar from "./Navbar";
+
 
 function Events() {
-    return (
-        <Navbar/>
-        
+    return (<h1></h1>
     )
 }
 
