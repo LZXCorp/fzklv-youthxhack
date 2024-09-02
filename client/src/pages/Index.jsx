@@ -62,7 +62,7 @@ function Index() {
                 <hr />
             </main>
             <footer>
-                <p>&copy; 2024 My Simple Home Page. All rights reserved.</p>
+                <p>&copy; 2024 UnityLink. All rights reserved.</p>
             </footer>
         </div>
     )
