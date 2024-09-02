@@ -2,5 +2,6 @@ services:
   fzklv-frontend:
     build: .
     container_name: fzklv-frontend
+    restart: unless-stopped
     ports:
       - 3000:80

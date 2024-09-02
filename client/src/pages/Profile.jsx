@@ -1,6 +1,5 @@
-import React from 'react'
 import Text from '../components/Text'
-import languageMap from '../assets/languageMap'
+import languageMap from '../assets/js/languageMap'
 
 const Profile = () => {
     const profileData = {

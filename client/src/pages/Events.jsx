@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import EventGrid from '../components/EventGrid'
-import event_list from '../assets/eventList'
-import '../assets/Events.css'
+import event_list from '../assets/js/eventList'
+import '../assets/css/Events.css'
 
 const EventsPage = () => {
     const profileData = {

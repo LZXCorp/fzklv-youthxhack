@@ -12,7 +12,7 @@ import Profile from './pages/Profile'
 import Onboarding from './pages/Onboarding'
 import RegistrationPage from './pages/RegistrationPage'
 
-import event_list from "./assets/eventList"
+import event_list from "./assets/js/eventList"
 
 function App() {
     const isOnboarded = localStorage.getItem('onboarded') ?? false

@@ -1,5 +1,4 @@
-import React from 'react'
-import '../assets/ConfirmationModal.css'
+import '../assets/css/ConfirmationModal.css'
 
 const ConfirmationModal = ({ message, onClose }) => {
     return (

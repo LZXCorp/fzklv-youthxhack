@@ -1,4 +1,4 @@
-import '../assets/index.css'
+import '../assets/css/index.css'
 import { Link } from 'react-router-dom'
 
 import Text from '../components/Text'

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import languageMap from '../assets/languageMap'
+import { useState } from 'react'
+import languageMap from '../assets/js/languageMap'
 import ConfirmationModal from './ConfirmationModal'
 
 const EventCard = ({ event, isRegistered }) => {

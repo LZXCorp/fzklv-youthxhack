@@ -1,8 +1,8 @@
-import Unity from '../assets/Unity-removebg_small.png'
+import Unity from '../assets/images/Unity-removebg_small.png'
 import LanguageToggle from './LanguageToggle'
 import Text from './Text'
 import ThemeToggle from './Theme'
-import '../assets/Navbar.css'
+import '../assets/css/Navbar.css'
 import { Link } from 'react-router-dom'
 
 function Navbar() {

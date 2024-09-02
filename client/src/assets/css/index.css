@@ -11,9 +11,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+.light-theme {
+  color: light-dark(#000, #000);
+  background-color: light-dark(#000, #fff);
+  --secondary-color: #e6e6e6
+}
+
+.dark-theme {
   color: light-dark(#000, #fff);
   background-color: light-dark(#fff, #121212);
+  --secondary-color: #111111
 }
 
 * {

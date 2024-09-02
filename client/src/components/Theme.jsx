@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import '../assets/Theme.css'
+import { useState, useLayoutEffect } from 'react'
+import '../assets/css/Theme.css'
 
 const ThemeToggle = () => {
     const [theme, setTheme] = useState(() => {
@@ -7,7 +7,7 @@ const ThemeToggle = () => {
         return localStorage.getItem('theme') || 'dark'
     })
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         // Apply the theme to the body and save it to localStorage
         document.body.classList.toggle('light-theme', theme === 'light')
         document.body.classList.toggle('dark-theme', theme === 'dark')

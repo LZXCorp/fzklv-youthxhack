@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import languageMap from '../assets/languageMap'
+import { useState } from 'react'
+import languageMap from '../assets/js/languageMap'
 import ConfirmationModal from '../components/ConfirmationModal'
 
 const RegistrationPage = ({ event }) => {
@@ -8,6 +8,7 @@ const RegistrationPage = ({ event }) => {
         .map((code) => languageMap[code] || code)
         .join(', ')
 
+    // eslint-disable-next-line no-unused-vars
     const handleFormSubmit = (e) => {
         setIsModalOpen(true)
     }

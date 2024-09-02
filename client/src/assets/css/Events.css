@@ -10,7 +10,7 @@
 }
 
 .event-card {
-    background-color: #111111;
+    background-color: var(--secondary-color);
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
