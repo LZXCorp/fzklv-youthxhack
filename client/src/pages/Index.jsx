@@ -20,9 +20,9 @@ function Index() {
                     />
                 </p>
                 <Link to="/events">
-                <button className="event_button">
-                    <Text english={'Events'} chinese={'活动'} />
-                </button>
+                    <button className="event_button">
+                        <Text english={'Events'} chinese={'活动'} />
+                    </button>
                 </Link>
             </header>
             <hr />

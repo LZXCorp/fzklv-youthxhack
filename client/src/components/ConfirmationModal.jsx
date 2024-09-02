@@ -1,5 +1,5 @@
 import React from 'react'
-import "../assets/ConfirmationModal.css"
+import '../assets/ConfirmationModal.css'
 
 const ConfirmationModal = ({ message, onClose }) => {
     return (
@@ -10,7 +10,7 @@ const ConfirmationModal = ({ message, onClose }) => {
                 <button onClick={onClose}>Close</button>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default ConfirmationModal;
+export default ConfirmationModal

@@ -1,5 +1,5 @@
-import React from 'react';
-import EventCard from './EventCard';
+import React from 'react'
+import EventCard from './EventCard'
 
 const EventGrid = ({ events }) => {
     return (
@@ -8,7 +8,7 @@ const EventGrid = ({ events }) => {
                 <EventCard key={index} event={event} />
             ))}
         </div>
-    );
-};
+    )
+}
 
-export default EventGrid;
+export default EventGrid

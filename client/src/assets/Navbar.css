@@ -37,6 +37,11 @@
     padding: 0 30px;
 }
 
+.navLinks li {
+    display: block;
+    margin: auto;
+}
+
 .navLink-1 {
     color: #000000;
     text-decoration: none;
@@ -45,4 +50,10 @@
 .navLinks li {
     display: block;
     margin: auto;
+}
+
+.profile-container {
+    display: 'flex';
+    flex-direction: 'row-reverse';
+    align-items: 'center';
 }
