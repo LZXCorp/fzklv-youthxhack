@@ -13,7 +13,10 @@ function Navbar() {
                     <img src={Unity} alt="" className="logo" />
                 </Link>
             </div>
-            <ul className="navLinks" style={{ listStyle: 'none', paddingLeft: '30px' }}>
+            <ul
+                className="navLinks"
+                style={{ listStyle: 'none', paddingLeft: '30px' }}
+            >
                 <li>
                     <Link to="" className="navLink">
                         <Text english={'About'} chinese={'关于'} />
@@ -24,11 +27,9 @@ function Navbar() {
                         <Text english={'Event'} chinese={'活动'} />
                     </Link>
                 </li>
-                <li style={{margin: "0 30px"}}>
+                <li style={{ margin: '0 30px' }}>
                     <Link to="/profile" className="navLink-1">
-                        <div
-                        className='profile-container'
-                        >
+                        <div className="profile-container">
                             <img
                                 className="pfp"
                                 src="https://images.unsplash.com/photo-1535213679542-f42b6f164647?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

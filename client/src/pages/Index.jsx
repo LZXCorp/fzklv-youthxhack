@@ -6,7 +6,7 @@ import Text from '../components/Text'
 function Index() {
     return (
         <div>
-            <header className='home-header'>
+            <header className="home-header">
                 <h1 className="home">
                     <Text
                         english={'Linking you to everyone'}

@@ -12,15 +12,18 @@
 }
 
 .light-theme {
+  --primary-color: light-dark(#000, #fff);
+  --secondary-color: #eeeeee;
+
   color: light-dark(#000, #000);
-  background-color: light-dark(#000, #fff);
-  --secondary-color: #e6e6e6
+  background-color: var(--primary-color);
 }
 
 .dark-theme {
+  --primary-color: light-dark(#fff, #080808);
+  --secondary-color: #242424;
   color: light-dark(#000, #fff);
-  background-color: light-dark(#fff, #080808);
-  --secondary-color: #181818
+  background-color: var(--primary-color);
 }
 
 * {
@@ -157,9 +160,8 @@ tr {
   display: flex;
   justify-content: left;
   text-align: left;
-  border: 1px solid rgb(0, 0, 0);
-  background-color: #fff;
-  color: #000;
+  border: 1px solid var(--primary-color);
+  background-color: var(--secondary-color);
   padding: 1em 3em;
 }
 

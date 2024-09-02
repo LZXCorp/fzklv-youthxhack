@@ -17,7 +17,7 @@ const Profile = () => {
         .join(', ')
 
     return (
-        <div className='content-div'>
+        <div className="content-div">
             <h2 className="profile_page">Profile Page</h2>
             <div className="profile_info">
                 <div className="image_with_text">
