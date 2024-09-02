@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Typography, Grid, Card, CardContent, Input, IconButton, Button } from '@mui/material';
-import { AccountCircle, AccessTime, Search, Clear, LocationOn } from '@mui/icons-material';
-import dayjs from 'dayjs';
 
 const eventList = [
     {
@@ -77,76 +74,59 @@ function Events() {
     };
 
     return (
-        <Box>
-            <Typography variant="h5" sx={{ my: 2 }}>
-                Events
-            </Typography>
+        <div>
+            <h2>Tutorials</h2>
 
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                <Input value={search} placeholder="Search"
-                    onChange={onSearchChange} />
-                <IconButton color="primary"
-                    onClick={() => filterEvents(search)}>
-                    <Search />
-                </IconButton>
-                <IconButton color="primary"
-                    onClick={onClickClear}>
-                    <Clear />
-                </IconButton>
-                <Box sx={{ flexGrow: 1 }} />
-                <Link to="/addevent">
-                    <Button variant='contained'>
-                        Add Event
-                    </Button>
-                </Link>
-            </Box>
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+                <input 
+                    value={search} 
+                    placeholder="Search"
+                    onChange={onSearchChange}
+                    onKeyDown={onSearchKeyDown} 
+                    style={{ padding: '8px', flexGrow: 1 }} 
+                />
+                <button onClick={onClickSearch} style={{ marginLeft: '8px' }}>
+                    Search
+                </button>
+                <button onClick={onClickClear} style={{ marginLeft: '8px' }}>
+                    Clear
+                </button>
+                {account && (
+                    <Link to="/addevent" style={{ marginLeft: 'auto' }}>
+                        <button>Add</button>
+                    </Link>
+                )}
+            </div>
 
-            <Grid container spacing={2}>
-                {
-                    filteredEvents.map((event) => {
-                        return (
-                            <Grid item xs={12} md={6} lg={4} key={event.id}>
-                                <Card>
-                                    {
-                                        event.thumbnail && (
-                                            <Box className="aspect-ratio-container">
-                                                <img alt="event"
-                                                    src={event.thumbnail}>
-                                                </img>
-                                            </Box>
-                                        )
-                                    }
-                                    <CardContent>
-                                        <Box sx={{ display: 'flex', mb: 1 }}>
-                                            <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                                                {event.name}
-                                            </Typography>
-                                        </Box>
-                                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}
-                                            color="text.secondary">
-                                            <LocationOn sx={{ mr: 1 }} />
-                                            <Typography>
-                                                {event.location}
-                                            </Typography>
-                                        </Box>
-                                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}
-                                            color="text.secondary">
-                                            <AccessTime sx={{ mr: 1 }} />
-                                            <Typography>
-                                                {event.eventDate} {event.startTime} - {event.endTime}
-                                            </Typography>
-                                        </Box>
-                                        <Typography sx={{ whiteSpace: 'pre-wrap' }}>
-                                            {event.description}
-                                        </Typography>
-                                    </CardContent>
-                                </Card>
-                            </Grid>
-                        );
-                    })
-                }
-            </Grid>
-        </Box>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '16px' }}>
+                {eventList.map((event) => (
+                    <div key={event.id} style={{ border: '1px solid #ccc', borderRadius: '8px', overflow: 'hidden' }}>
+                        {event.thumbnail && (
+                            <div style={{ paddingTop: '56.25%', background: `url(${event.thumbnail}) center/cover` }} />
+                        )}
+                        <div style={{ padding: '16px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                                <h3 style={{ margin: 0 }}>{event.name}</h3>
+                                {account && account.id === event.accountId && (
+                                    <Link to={`/editevent/${event.id}`}>
+                                        <button style={{ padding: '4px' }}>Edit</button>
+                                    </Link>
+                                )}
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', color: '#555' }}>
+                                <span style={{ marginRight: '8px' }}>Organizer:</span>
+                                <p style={{ margin: 0 }}>{event.organizerContact}</p>
+                            </div>
+                            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', color: '#555' }}>
+                                <span style={{ marginRight: '8px' }}>Date:</span>
+                                <p style={{ margin: 0 }}>{event.eventDate}</p>
+                            </div>
+                            <p style={{ whiteSpace: 'pre-wrap' }}>{event.description}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
     );
 }
 
