@@ -61,7 +61,7 @@ p {
 
 .event_button:hover {
   color: light-dark(#000, #fff);
-  background-color: light-dark(#fff, #000);1` 
+  background-color: light-dark(#fff, #000);
 }
 
 .contact_button {
@@ -122,6 +122,21 @@ button:focus-visible {
   padding: 0 20%;
 }
 
+table {
+  margin: 0 auto;
+}
+
+tr {
+  text-align: left;
+}
+
+.pfp {
+    display: block;
+    aspect-ratio: 1;
+    height: 3em;
+    object-fit: cover;
+    border-radius: 50%;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

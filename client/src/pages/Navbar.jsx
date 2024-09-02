@@ -26,6 +26,15 @@ function Navbar() {
                         <Text english={'Contact'} chinese={'联系'} />
                     </Link>
                 </li>
+
+                <li>
+                    <Link to="/profile" className='navLink'>
+                        <div style={{ display: 'flex', flexDirection: 'row-reverse', alignItems: 'center'}}>
+                            <img className='pfp' src='https://images.unsplash.com/photo-1535213679542-f42b6f164647?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'></img>
+                            <Text english={'Profile'} chinese={'使用者'} className="profile"/>
+                       </div>
+                    </Link>
+                </li>
                 <li className="navLink">
                     <LanguageToggle />
                 </li>
