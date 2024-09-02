@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "format": "prettier --loglevel warn --write \"{src/components,src/pages}/**/*.{jsx,js}\""
+    "format": "prettier --log-level warn --write \"{src/components,src/pages}/**/*.{jsx,js}\""
   },
   "dependencies": {
     "prettier": "^3.3.3",
