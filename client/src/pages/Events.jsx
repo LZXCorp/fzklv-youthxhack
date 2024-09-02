@@ -17,6 +17,7 @@ const event_list = [
         languages: ['en', 'zh-cn'],
         organizerContact: '99558888',
         isRegistrationOpen: true,
+        registrationLink: '/register/healthy-living-workshop',
     },
     {
         name: 'Art Therapy Session',
@@ -31,6 +32,7 @@ const event_list = [
         languages: ['en', 'ms'],
         organizerContact: '99447777',
         isRegistrationOpen: true,
+        registrationLink: '/register/art-therapy-session',
     },
     {
         name: 'Technology for Seniors',
@@ -45,6 +47,7 @@ const event_list = [
         languages: ['en', 'ta'],
         organizerContact: '99336677',
         isRegistrationOpen: false,
+        registrationLink: '/register/technology-for-seniors',
     },
     {
         name: 'Community Health Screening',
@@ -59,6 +62,7 @@ const event_list = [
         languages: ['en', 'ms', 'ta'],
         organizerContact: '99224455',
         isRegistrationOpen: true,
+        registrationLink: '/register/community-health-screening',
     },
     {
         name: 'Senior Fitness Class',
@@ -73,6 +77,7 @@ const event_list = [
         languages: ['en', 'zh-cn'],
         organizerContact: '99887766',
         isRegistrationOpen: true,
+        registrationLink: '/register/senior-fitness-class',
     },
     {
         name: 'Cooking for Health',
@@ -87,8 +92,10 @@ const event_list = [
         languages: ['en', 'zh-cn', 'ms'],
         organizerContact: '99775544',
         isRegistrationOpen: true,
+        registrationLink: '/register/cooking-for-health',
     },
 ];
+
 
 function Events() {
     return (

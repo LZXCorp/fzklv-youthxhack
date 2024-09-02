@@ -34,22 +34,24 @@
     margin: 5px 0;
 }
 
-.event-details button {
+.register-button {
+    display: inline-block;
     margin-top: 10px;
     padding: 10px;
     background-color: #007bff;
     color: white;
-    border: none;
+    text-decoration: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.event-details button:disabled {
+.register-button.disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
 
-.event-details button:hover:not(:disabled) {
+.register-button:hover:not(.disabled) {
     background-color: #0056b3;
 }
+

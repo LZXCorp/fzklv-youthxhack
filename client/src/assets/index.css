@@ -138,6 +138,44 @@ tr {
     border-radius: 50%;
 }
 
+.profile_info {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.home_address {
+  font-weight: 800;
+}
+
+.image_with_text {
+  padding: 30px;
+}
+
+.user_name {
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: #fff;
+  color: #000;
+  padding: 1em 3em;
+}
+
+.user_name p {
+  text-align: left;
+  font-weight: 600;
+}
+
+.profile_pic {
+  display: block;
+  aspect-ratio: 1;
+  height: 8em;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 20px 70px;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

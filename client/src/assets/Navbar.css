@@ -34,7 +34,12 @@
     color: #000000;
     text-decoration: none;
     font-size: 1rem;
-    padding: 0 0 0 50px;
+    padding: 0 30px;
+}
+
+.navLink-1 {
+    color: #000000;
+    text-decoration: none;
 }
 
 .navLinks li {

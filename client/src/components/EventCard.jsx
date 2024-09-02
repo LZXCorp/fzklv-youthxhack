@@ -14,9 +14,12 @@ const EventCard = ({ event }) => {
                 <p><strong>Contact:</strong> {event.organizerContact}</p>
                 <p><strong>Availability:</strong> {event.availability} seats</p>
                 <p><strong>Accessibility:</strong> {event.accessibility.join(', ')}</p>
-                <button disabled={!event.isRegistrationOpen}>
+                <a 
+                    href={event.registrationLink}
+                    className={`register-button ${!event.isRegistrationOpen ? 'disabled' : ''}`}
+                >
                     {event.isRegistrationOpen ? 'Register Now' : 'Registration Closed'}
-                </button>
+                </a>
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ import { Navigate } from 'react-router'
 
 import Index from './pages/Index'
 import Events from './pages/Events'
-import Navbar from './pages/Navbar'
+import Navbar from './components/Navbar'
 import Profile from './pages/Profile'
 import Onboarding from './pages/Onboarding'
 
