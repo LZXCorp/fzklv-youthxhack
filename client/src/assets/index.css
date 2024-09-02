@@ -4,8 +4,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,26 +11,76 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+body {
+  color: light-dark(#000, #fff);
+  background-color: light-dark(#fff, #000);
 }
 
-body {
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  width: 40%;
+  height: 40%;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2rem;
+  text-align: center;
   line-height: 1.1;
+  color: #fff;
+}
+
+.home {
+  padding: 0 0 10px 0;
+}
+
+
+.subtext {
+  color: #fff;
+}
+
+h2 {
+  margin: 5px;
+}
+
+p {
+  margin: 10px;
+}
+
+.event_button {
+  color: light-dark(#fff, #000);
+  background-color: light-dark(#000, #fff);
+}
+
+.event_button:hover {
+  color: light-dark(#000, #fff);
+  background-color: light-dark(#fff, #000);1` 
+}
+
+.contact_button {
+  color: light-dark(#fff, #000);
+  background-color: light-dark(#000, #fff);
+}
+
+.contact_button:hover {
+  color: light-dark(#000, #fff);
+  background-color: light-dark(#fff, #000);
+}
+
+header {
+  background-color: #000;
+  padding: 100px 0 ;
+}
+
+header div {
+  padding: 0 0 0 10%;
 }
 
 button {
@@ -42,26 +90,49 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #fff;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+.about,
+.service,
+.contact {
+  padding: 5% 0;
+}
+
+.about h2,
+.service h2,
+.contact h2 {
+  padding: 2% 0;
+}
+
+.about p,
+.service p,
+.contact p {
+  padding: 0 20%;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }

@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: block;
+    width: 40%;
+    height: 40%;
+    margin: 0;
+}
+
+.LanguageToggle {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+}
+
+.navLinks {
+    list-style: none;
+    display: flex;
+}
+
+.navLink {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0 0 0 50px;
+}
+
+.navLinks li {
+    display: block;
+    margin: auto;
+}
