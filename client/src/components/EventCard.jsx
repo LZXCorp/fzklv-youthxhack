@@ -41,7 +41,7 @@ const EventCard = ({ event, isRegistered }) => {
                 )}
                 {isModalOpen && (
                     <ConfirmationModal
-                        message="Thank you for registering! We will contact you with further details."
+                        message="Thank you for registering! You may scroll down to see your registrations."
                         onClose={closeModal}
                     />
                 )}
