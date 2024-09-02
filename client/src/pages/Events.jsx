@@ -1,5 +1,12 @@
-const event_list = [
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Box, Typography, Grid, Card, CardContent, Input, IconButton, Button } from '@mui/material';
+import { AccountCircle, AccessTime, Search, Clear, LocationOn } from '@mui/icons-material';
+import dayjs from 'dayjs';
+
+const eventList = [
     {
+        id: 1,
         name: 'Healthy Living Workshop',
         description: 'A workshop focused on promoting a healthy lifestyle among seniors, including exercise routines and nutrition advice.',
         eventDate: '2024-09-15',
@@ -14,6 +21,7 @@ const event_list = [
         isRegistrationOpen: true,
     },
     {
+        id: 2,
         name: 'Art Therapy Session',
         description: 'An art therapy session aimed at helping individuals express emotions and improve mental well-being through creative activities.',
         eventDate: '2024-09-20',
@@ -28,6 +36,7 @@ const event_list = [
         isRegistrationOpen: true,
     },
     {
+        id: 3,
         name: 'Technology for Seniors',
         description: 'A hands-on workshop teaching seniors how to use smartphones, apps, and the internet safely and effectively.',
         eventDate: '2024-09-25',
@@ -41,56 +50,104 @@ const event_list = [
         organizerContact: '99336677',
         isRegistrationOpen: false,
     },
-    {
-        name: 'Walk in Yishun Park',
-        description: '',
-        eventDate: '2024-09-30',
-        startTime: '08:00',
-        endTime: '12:00',
-        availability: 50,
-        location: 'Yishun Park',
-        thumbnail: 'assets/yishun-park-thumbnail.png',
-        accessibility: ['wheelchair', 'hearing assistance'],
-        languages: ['en', 'ms', 'ta'],
-        organizerContact: '99224455',
-        isRegistrationOpen: true,
-    },
-    {
-        name: 'Senior Fitness Class',
-        description: 'A fitness class designed for seniors to improve mobility and strength through low-impact exercises.',
-        eventDate: '2024-10-05',
-        startTime: '07:30',
-        endTime: '09:00',
-        availability: 20,
-        location: 'Jurong East Sports Complex',
-        thumbnail: 'assets/fitness-class-thumbnail.png',
-        accessibility: ['wheelchair'],
-        languages: ['en', 'zh-cn'],
-        organizerContact: '99887766',
-        isRegistrationOpen: true,
-    },
-    {
-        name: 'Cooking for Health',
-        description: 'A cooking workshop that teaches healthy and affordable recipes tailored to seniors.',
-        eventDate: '2024-10-10',
-        startTime: '11:00',
-        endTime: '13:00',
-        availability: 12,
-        location: 'Pasir Ris Community Centre',
-        thumbnail: 'assets/cooking-workshop-thumbnail.png',
-        accessibility: ['wheelchair', 'sign language interpreter'],
-        languages: ['en', 'zh-cn', 'ms'],
-        organizerContact: '99775544',
-        isRegistrationOpen: true,
-    },
 ];
 
 function Events() {
+    const [search, setSearch] = useState('');
+    const [filteredEvents, setFilteredEvents] = useState(eventList);
+
+    const onSearchChange = (e) => {
+        setSearch(e.target.value);
+        filterEvents(e.target.value);
+    };
+
+    const filterEvents = (searchTerm) => {
+        const lowerCaseSearchTerm = searchTerm.toLowerCase();
+        const filtered = eventList.filter(event =>
+            event.name.toLowerCase().includes(lowerCaseSearchTerm) ||
+            event.description.toLowerCase().includes(lowerCaseSearchTerm) ||
+            event.location.toLowerCase().includes(lowerCaseSearchTerm)
+        );
+        setFilteredEvents(filtered);
+    };
+
+    const onClickClear = () => {
+        setSearch('');
+        setFilteredEvents(eventList);
+    };
+
     return (
-        <div>
-            <h1>Events</h1>
-        </div>
-    )
+        <Box>
+            <Typography variant="h5" sx={{ my: 2 }}>
+                Events
+            </Typography>
+
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                <Input value={search} placeholder="Search"
+                    onChange={onSearchChange} />
+                <IconButton color="primary"
+                    onClick={() => filterEvents(search)}>
+                    <Search />
+                </IconButton>
+                <IconButton color="primary"
+                    onClick={onClickClear}>
+                    <Clear />
+                </IconButton>
+                <Box sx={{ flexGrow: 1 }} />
+                <Link to="/addevent">
+                    <Button variant='contained'>
+                        Add Event
+                    </Button>
+                </Link>
+            </Box>
+
+            <Grid container spacing={2}>
+                {
+                    filteredEvents.map((event) => {
+                        return (
+                            <Grid item xs={12} md={6} lg={4} key={event.id}>
+                                <Card>
+                                    {
+                                        event.thumbnail && (
+                                            <Box className="aspect-ratio-container">
+                                                <img alt="event"
+                                                    src={event.thumbnail}>
+                                                </img>
+                                            </Box>
+                                        )
+                                    }
+                                    <CardContent>
+                                        <Box sx={{ display: 'flex', mb: 1 }}>
+                                            <Typography variant="h6" sx={{ flexGrow: 1 }}>
+                                                {event.name}
+                                            </Typography>
+                                        </Box>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}
+                                            color="text.secondary">
+                                            <LocationOn sx={{ mr: 1 }} />
+                                            <Typography>
+                                                {event.location}
+                                            </Typography>
+                                        </Box>
+                                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}
+                                            color="text.secondary">
+                                            <AccessTime sx={{ mr: 1 }} />
+                                            <Typography>
+                                                {dayjs(event.eventDate).format('YYYY-MM-DD')} {event.startTime} - {event.endTime}
+                                            </Typography>
+                                        </Box>
+                                        <Typography sx={{ whiteSpace: 'pre-wrap' }}>
+                                            {event.description}
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        );
+                    })
+                }
+            </Grid>
+        </Box>
+    );
 }
 
-export default Events
+export default Events;
