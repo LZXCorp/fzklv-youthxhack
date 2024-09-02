@@ -4,7 +4,6 @@ function Home() {
     return (
         <>
             <div>
-                <Navbar />
                 <header>
                     <h1 className="home">
                         <Text
@@ -24,7 +23,6 @@ function Home() {
                 </header>
                 <hr />
                 <main>
-
                     <section className="contact">
                         <h2>
                             <Text english={'Contact Us'} chinese={'联系我们'} />

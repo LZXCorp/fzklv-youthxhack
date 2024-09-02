@@ -1,14 +1,14 @@
-import React from 'react';
+import React from 'react'
 
 const Profile = () => {
-  const profileData = {
-    name: 'Alan Tan',
-    dob: '1946-09-15',
-    gender: 'Male',
-    disabilities: ['Partial Vision Impairment'],
-    phoneNumber: '+65 9876 5432',
-    nextOfKinPhoneNumber: '+65 9123 4567',
-  };
+    const profileData = {
+        name: 'Alan Tan',
+        dob: '1946-09-15',
+        gender: 'Male',
+        disabilities: ['Partial Vision Impairment'],
+        phoneNumber: '+65 9876 5432',
+        nextOfKinPhoneNumber: '+65 9123 4567',
+    }
 
   return (
     <div>
@@ -46,4 +46,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Profile

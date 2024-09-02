@@ -17,7 +17,7 @@ function Navbar() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="" className="navLink">
+                    <Link to="events" className="navLink">
                         <Text english={'Event'} chinese={'活动'} />
                     </Link>
                 </li>
