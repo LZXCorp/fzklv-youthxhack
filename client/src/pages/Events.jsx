@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../assets/Events.css'
+import EventGrid from "../components/EventGrid"
 
-const eventList = [
+const event_list = [
     {
-        id: 1,
         name: 'Healthy Living Workshop',
         description: 'A workshop focused on promoting a healthy lifestyle among seniors, including exercise routines and nutrition advice.',
         eventDate: '2024-09-15',
@@ -18,7 +19,6 @@ const eventList = [
         isRegistrationOpen: true,
     },
     {
-        id: 2,
         name: 'Art Therapy Session',
         description: 'An art therapy session aimed at helping individuals express emotions and improve mental well-being through creative activities.',
         eventDate: '2024-09-20',
@@ -33,7 +33,6 @@ const eventList = [
         isRegistrationOpen: true,
     },
     {
-        id: 3,
         name: 'Technology for Seniors',
         description: 'A hands-on workshop teaching seniors how to use smartphones, apps, and the internet safely and effectively.',
         eventDate: '2024-09-25',
@@ -47,85 +46,55 @@ const eventList = [
         organizerContact: '99336677',
         isRegistrationOpen: false,
     },
+    {
+        name: 'Community Health Screening',
+        description: 'A free health screening event providing blood pressure, glucose, and cholesterol checks for the elderly.',
+        eventDate: '2024-09-30',
+        startTime: '08:00',
+        endTime: '12:00',
+        availability: 50,
+        location: 'Yishun Polyclinic',
+        thumbnail: 'assets/health-screening-thumbnail.png',
+        accessibility: ['wheelchair', 'hearing assistance'],
+        languages: ['en', 'ms', 'ta'],
+        organizerContact: '99224455',
+        isRegistrationOpen: true,
+    },
+    {
+        name: 'Senior Fitness Class',
+        description: 'A fitness class designed for seniors to improve mobility and strength through low-impact exercises.',
+        eventDate: '2024-10-05',
+        startTime: '07:30',
+        endTime: '09:00',
+        availability: 20,
+        location: 'Jurong East Sports Complex',
+        thumbnail: 'assets/fitness-class-thumbnail.png',
+        accessibility: ['wheelchair'],
+        languages: ['en', 'zh-cn'],
+        organizerContact: '99887766',
+        isRegistrationOpen: true,
+    },
+    {
+        name: 'Cooking for Health',
+        description: 'A cooking workshop that teaches healthy and affordable recipes tailored to seniors.',
+        eventDate: '2024-10-10',
+        startTime: '11:00',
+        endTime: '13:00',
+        availability: 12,
+        location: 'Pasir Ris Community Centre',
+        thumbnail: 'assets/cooking-workshop-thumbnail.png',
+        accessibility: ['wheelchair', 'sign language interpreter'],
+        languages: ['en', 'zh-cn', 'ms'],
+        organizerContact: '99775544',
+        isRegistrationOpen: true,
+    },
 ];
 
 function Events() {
-    const [search, setSearch] = useState('');
-    const [filteredEvents, setFilteredEvents] = useState(eventList);
-
-    const onSearchChange = (e) => {
-        setSearch(e.target.value);
-        filterEvents(e.target.value);
-    };
-
-    const filterEvents = (searchTerm) => {
-        const lowerCaseSearchTerm = searchTerm.toLowerCase();
-        const filtered = eventList.filter(event =>
-            event.name.toLowerCase().includes(lowerCaseSearchTerm) ||
-            event.description.toLowerCase().includes(lowerCaseSearchTerm) ||
-            event.location.toLowerCase().includes(lowerCaseSearchTerm)
-        );
-        setFilteredEvents(filtered);
-    };
-
-    const onClickClear = () => {
-        setSearch('');
-        setFilteredEvents(eventList);
-    };
-
     return (
         <div>
-            <h2>Tutorials</h2>
-
-            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
-                <input 
-                    value={search} 
-                    placeholder="Search"
-                    onChange={onSearchChange}
-                    onKeyDown={onSearchKeyDown} 
-                    style={{ padding: '8px', flexGrow: 1 }} 
-                />
-                <button onClick={onClickSearch} style={{ marginLeft: '8px' }}>
-                    Search
-                </button>
-                <button onClick={onClickClear} style={{ marginLeft: '8px' }}>
-                    Clear
-                </button>
-                {account && (
-                    <Link to="/addevent" style={{ marginLeft: 'auto' }}>
-                        <button>Add</button>
-                    </Link>
-                )}
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '16px' }}>
-                {eventList.map((event) => (
-                    <div key={event.id} style={{ border: '1px solid #ccc', borderRadius: '8px', overflow: 'hidden' }}>
-                        {event.thumbnail && (
-                            <div style={{ paddingTop: '56.25%', background: `url(${event.thumbnail}) center/cover` }} />
-                        )}
-                        <div style={{ padding: '16px' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                                <h3 style={{ margin: 0 }}>{event.name}</h3>
-                                {account && account.id === event.accountId && (
-                                    <Link to={`/editevent/${event.id}`}>
-                                        <button style={{ padding: '4px' }}>Edit</button>
-                                    </Link>
-                                )}
-                            </div>
-                            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', color: '#555' }}>
-                                <span style={{ marginRight: '8px' }}>Organizer:</span>
-                                <p style={{ margin: 0 }}>{event.organizerContact}</p>
-                            </div>
-                            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', color: '#555' }}>
-                                <span style={{ marginRight: '8px' }}>Date:</span>
-                                <p style={{ margin: 0 }}>{event.eventDate}</p>
-                            </div>
-                            <p style={{ whiteSpace: 'pre-wrap' }}>{event.description}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
+            <h1>Upcoming Events</h1>
+            <EventGrid events={event_list} />
         </div>
     );
 }
