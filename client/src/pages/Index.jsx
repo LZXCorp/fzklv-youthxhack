@@ -1,4 +1,5 @@
 import '../assets/index.css'
+import { Link } from 'react-router-dom'
 
 import Text from '../components/Text'
 
@@ -18,9 +19,11 @@ function Index() {
                         chinese={'来加入我们举行的活动吧！'}
                     />
                 </p>
+                <Link to="/events">
                 <button className="event_button">
                     <Text english={'Events'} chinese={'活动'} />
                 </button>
+                </Link>
             </header>
             <hr />
             <main>
