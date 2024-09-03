@@ -15,7 +15,11 @@ function Navbar({ isLoggedIn }) {
             </div>
             <ul
                 className="navLinks"
-                style={{ listStyle: 'none', paddingLeft: '30px', display: `${isLoggedIn ? '' : 'none'}` }}
+                style={{
+                    listStyle: 'none',
+                    paddingLeft: '30px',
+                    display: `${isLoggedIn ? '' : 'none'}`,
+                }}
             >
                 <li>
                     <Link to="" className="navLink">

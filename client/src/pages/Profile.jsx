@@ -3,7 +3,6 @@ import languageMap from '../assets/js/languageMap'
 import profileData from '../assets/js/profileData'
 
 const Profile = () => {
-
     const languages = profileData.languages
         .map((code) => languageMap[code] || code)
         .join(', ')
