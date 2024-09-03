@@ -27,7 +27,7 @@ function Onboarding() {
                 className={`onboard-step onboard-step1 ${currStep == 1 ? '' : 'onboard-hidden'}`}
             >
                 <div className="onboard-container">
-                    <h1>Prefeered Languages</h1>
+                    <h1>Preferred Languages</h1>
                     <h3>Choose from one or more of the following Boxes</h3>
 
                     <div className="box-container">
