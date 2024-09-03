@@ -6,20 +6,22 @@ import profileData from '../assets/js/profileData'
 
 const EventsPage = () => {
 
-    // Filter events based on language and accessibility needs
-    const recommendedEvents = event_list.filter(
-        (event) =>
-            event.languages.some((lang) =>
-                profileData.languages.includes(lang)
-            ) && event.accessibility.includes('hearing assistance')
-    )
-
     const [availableEvents, setAvailableEvents] = useState(event_list);
     const [registeredEvents, setRegisteredEvents] = useState([]);
+    const [recommendedEvents, setRecommendedEvents] = useState(getRecommendedEvents(event_list));
+
+    function getRecommendedEvents(events) {
+        return events.filter(event =>
+            event.languages.some(lang => profileData.languages.includes(lang)) &&
+            event.accessibility.includes('hearing assistance')
+        );
+    }
 
     const handleRegister = (event) => {
         setRegisteredEvents([...registeredEvents, event]);
         setAvailableEvents(availableEvents.filter(e => e.name !== event.name));
+        setRecommendedEvents(getRecommendedEvents(availableEvents.filter(e => e.name !== event.name)))
+        
     };
 
     return (
