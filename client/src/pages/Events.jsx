@@ -2,17 +2,9 @@ import { useState } from 'react'
 import EventGrid from '../components/EventGrid'
 import event_list from '../assets/js/eventList'
 import '../assets/css/Events.css'
+import profileData from '../assets/js/profileData'
 
 const EventsPage = () => {
-    const profileData = {
-        name: 'Alan Tan',
-        dob: '1946-09-15',
-        gender: 'Male',
-        languages: ['zh-cn', 'nan'],
-        disabilities: ['Hearing Loss'],
-        phoneNumber: '+65 9876 5432',
-        nextOfKinPhoneNumber: '+65 9123 4567',
-    }
 
     // Filter events based on language and accessibility needs
     const recommendedEvents = event_list.filter(
@@ -22,11 +14,13 @@ const EventsPage = () => {
             ) && event.accessibility.includes('hearing assistance')
     )
 
-    const [registeredEvents, setRegisteredEvents] = useState([])
+    const [availableEvents, setAvailableEvents] = useState(event_list);
+    const [registeredEvents, setRegisteredEvents] = useState([]);
 
     const handleRegister = (event) => {
-        setRegisteredEvents([...registeredEvents, event])
-    }
+        setRegisteredEvents([...registeredEvents, event]);
+        setAvailableEvents(availableEvents.filter(e => e.name !== event.name));
+    };
 
     return (
         <div className="events-page">
@@ -36,10 +30,10 @@ const EventsPage = () => {
                 <div className="recommended-events">
                     <h2>Recommended Events for You</h2>
                     <EventGrid
-                        events={recommendedEvents.map((event) => ({
+                        events={recommendedEvents.map(event => ({
                             ...event,
                             onRegister: () => handleRegister(event),
-                            isRegistered: false,
+                            isRegistered: false
                         }))}
                     />
                 </div>
@@ -47,10 +41,10 @@ const EventsPage = () => {
 
             <h2>Available Events</h2>
             <EventGrid
-                events={event_list.map((event) => ({
+                events={availableEvents.map(event => ({
                     ...event,
                     onRegister: () => handleRegister(event),
-                    isRegistered: false,
+                    isRegistered: false
                 }))}
             />
 
@@ -58,9 +52,9 @@ const EventsPage = () => {
                 <div className="registered-events">
                     <h2>Registered Events</h2>
                     <EventGrid
-                        events={registeredEvents.map((event) => ({
+                        events={registeredEvents.map(event => ({
                             ...event,
-                            isRegistered: true,
+                            isRegistered: true
                         }))}
                     />
                 </div>
