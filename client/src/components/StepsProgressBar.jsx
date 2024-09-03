@@ -1,4 +1,5 @@
 import '../assets/css/StepsProgressBar.css'
+import Progress from './Progress'
 
 function StepsProgressBar({ step, total_steps }) {
     const steps = [];
@@ -11,7 +12,7 @@ function StepsProgressBar({ step, total_steps }) {
     return (
         <div className="steps-progress-bar">
             <div className="progress-container">
-                <div className="progress"></div>
+                <Progress total_steps={total_steps} steps={step}/>
                 {steps}
             </div>
         </div>
