@@ -22,7 +22,7 @@ const event_list = [
         endTime: '16:00',
         availability: 15,
         location: 'Bukit Batok Community Centre',
-        thumbnail: 'assets/images/art-therapy-thumbnail.png',
+        thumbnail: '../assets/images/art-therapy-thumbnail.png',
         accessibility: ['wheelchair'],
         languages: ['en', 'ms'],
         organizerContact: '99447777',
