@@ -52,6 +52,7 @@
 
 .register-button.disabled {
     background-color: #ccc;
+    color: #000;
     cursor: not-allowed;
 }
 

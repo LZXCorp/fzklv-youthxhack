@@ -23,7 +23,7 @@
 }
 
 .modal-content button {
-    margin-top: 20px;
+    margin-bottom: 30px;
     padding: 10px 20px;
     border: none;
     background: #007bff;
@@ -35,4 +35,30 @@
 
 .modal-content button:hover {
     background: #0056b3;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.button-group button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+  background-color: #0056b3;
+}
+
+.button-group p {
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #999;
 }
