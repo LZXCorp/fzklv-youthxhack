@@ -7,9 +7,12 @@ function Onboarding() {
     const today = new Date().toISOString().split('T')[0]
 
     const storeOnboardingStatus = () => {
-        localStorage.setItem('onboarded', 'true');
-        window.location.reload();
+        localStorage.setItem('onboarded', 'true')
+        window.location.reload()
     }
+
+    const [selectedEng, setSelectedEng] = useState(false)
+    const [selectedCn, setSelectedCn] = useState(false)
 
     return (
         <div className="content-div">
@@ -24,18 +27,30 @@ function Onboarding() {
                 className={`onboard-step onboard-step1 ${currStep == 1 ? '' : 'onboard-hidden'}`}
             >
                 <div className="onboard-container">
-                    <h1>Prefeered Language</h1>
-                    <h3>Choose from one of the following Boxes</h3>
+                    <h1>Prefeered Languages</h1>
+                    <h3>Choose from one or more of the following Boxes</h3>
 
                     <div className="box-container">
-                        <button className="box" onClick={() => setCurrStep(currStep + 1)}>
+                        <button
+                            className={`box ${selectedEng ? 'selected' : ''}`}
+                            onClick={() => setSelectedEng(!selectedEng)}
+                        >
                             <p>English</p>
                         </button>
-                        <button className="box" onClick={() => setCurrStep(currStep + 1)}>
+                        <button
+                            className={`box ${selectedCn ? 'selected' : ''}`}
+                            onClick={() => setSelectedCn(!selectedCn)}
+                        >
                             <p>简体中文</p>
                         </button>
                     </div>
 
+                    <button
+                        className="onboard-continue"
+                        onClick={() => setCurrStep(currStep + 1)}
+                    >
+                        Continue
+                    </button>
                 </div>
             </div>
 
@@ -69,8 +84,18 @@ function Onboarding() {
                         <p>Phone Number</p>
                         <input type="text" />
                     </div>
-                    <button className='onboard-return' onClick={() => setCurrStep(currStep - 1)}>Return</button>
-                    <button className='onboard-continue' onClick={() => setCurrStep(currStep + 1)}>Continue</button>
+                    <button
+                        className="onboard-return"
+                        onClick={() => setCurrStep(currStep - 1)}
+                    >
+                        Return
+                    </button>
+                    <button
+                        className="onboard-continue"
+                        onClick={() => setCurrStep(currStep + 1)}
+                    >
+                        Continue
+                    </button>
                 </div>
             </div>
 
@@ -91,8 +116,18 @@ function Onboarding() {
                         <input type="text" />
                     </div>
 
-                    <button className='onboard-return' onClick={() => setCurrStep(currStep - 1)}>Return</button>
-                    <button className='onboard-continue' onClick={() => setCurrStep(currStep + 1)}>Continue</button>
+                    <button
+                        className="onboard-return"
+                        onClick={() => setCurrStep(currStep - 1)}
+                    >
+                        Return
+                    </button>
+                    <button
+                        className="onboard-continue"
+                        onClick={() => setCurrStep(currStep + 1)}
+                    >
+                        Continue
+                    </button>
                 </div>
             </div>
 
@@ -108,8 +143,18 @@ function Onboarding() {
                         <input type="text" />
                     </div>
 
-                    <button className='onboard-return' onClick={() => setCurrStep(currStep - 1)}>Return</button>
-                    <button className='onboard-continue' onClick={() => setCurrStep(currStep + 1)}>Continue</button>
+                    <button
+                        className="onboard-return"
+                        onClick={() => setCurrStep(currStep - 1)}
+                    >
+                        Return
+                    </button>
+                    <button
+                        className="onboard-continue"
+                        onClick={() => setCurrStep(currStep + 1)}
+                    >
+                        Continue
+                    </button>
                 </div>
             </div>
 
@@ -120,7 +165,12 @@ function Onboarding() {
                     <h1>Successful Onboarding!</h1>
                     <h2>You may continue to the Events</h2>
 
-                    <button className='onboard-finish-button' onClick={storeOnboardingStatus}>Continue</button>
+                    <button
+                        className="onboard-finish-button"
+                        onClick={storeOnboardingStatus}
+                    >
+                        Continue
+                    </button>
                 </div>
             </div>
         </div>

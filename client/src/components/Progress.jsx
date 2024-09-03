@@ -2,7 +2,7 @@ function Progress({ steps, total_steps }) {
     console.log(steps)
     console.log(total_steps)
 
-    const progress = ((steps - 1) / (total_steps - 1)) * 100;
+    const progress = ((steps - 1) / (total_steps - 1)) * 100
 
     return (
         <div
