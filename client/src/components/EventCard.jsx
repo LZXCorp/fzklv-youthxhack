@@ -3,7 +3,6 @@ import languageMap from '../assets/js/languageMap'
 import ConfirmationModal from './ConfirmationModal'
 
 const EventCard = ({ event, isRegistered }) => {
-    console.log(isRegistered)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     const openModal = () => {
@@ -12,6 +11,8 @@ const EventCard = ({ event, isRegistered }) => {
             event.onRegister() // Only register if it's not already registered
         }
     }
+
+    console.log(isRegistered)
 
     const closeModal = () => {
         setIsModalOpen(false)
