@@ -5,7 +5,7 @@ import ThemeToggle from './Theme'
 import '../assets/css/Navbar.css'
 import { Link } from 'react-router-dom'
 
-function Navbar() {
+function Navbar({ isLoggedIn }) {
     return (
         <nav className="navbar">
             <div className="</nav>div_logo">
@@ -15,7 +15,7 @@ function Navbar() {
             </div>
             <ul
                 className="navLinks"
-                style={{ listStyle: 'none', paddingLeft: '30px' }}
+                style={{ listStyle: 'none', paddingLeft: '30px', display: `${isLoggedIn ? '' : 'none'}` }}
             >
                 <li>
                     <Link to="" className="navLink">

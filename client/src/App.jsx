@@ -1,8 +1,4 @@
-import {
-    BrowserRouter,
-    Routes,
-    Route,
-} from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navigate } from 'react-router'
 
 import Index from './pages/Index'
@@ -12,35 +8,35 @@ import Profile from './pages/Profile'
 import Onboarding from './pages/Onboarding'
 import RegistrationPage from './pages/RegistrationPage'
 
-import event_list from "./assets/js/eventList"
+import event_list from './assets/js/eventList'
 
 function App() {
     const isOnboarded = localStorage.getItem('onboarded') ?? false
 
     return (
         <BrowserRouter>
-            <Navbar />
+            <Navbar isLoggedIn={isOnboarded} />
             <Routes>
-                {/* {isOnboarded ? ( */}
-                <>
-                    <Route path="/" element={<Index />} />
-                    <Route path="/events" element={<Events />} />
-                    <Route path="/profile" element={<Profile />} />
-                    {event_list.map(event => (
-                        <Route
-                            key={event.name}
-                            path={event.registrationLink}
-                            element={<RegistrationPage event={event} />}
-                        />
-                    ))}
-                    <Route path="/onboarding" element={<Onboarding />} />
-                </>
-                {/* ) : ( */}
-                <>
-                    {/* <Route path="/" element={<Onboarding />} /> */}
-                    {/* <Route path="*" element={<Navigate to="/" />} /> */}
-                </>
-                {/* )} */}
+                {isOnboarded ? (
+                    <>
+                        <Route path="/" element={<Index />} />
+                        <Route path="/events" element={<Events />} />
+                        <Route path="/profile" element={<Profile />} />
+                        {event_list.map((event) => (
+                            <Route
+                                key={event.name}
+                                path={event.registrationLink}
+                                element={<RegistrationPage event={event} />}
+                            />
+                        ))}
+                        <Route path="/onboarding" element={<Navigate to="/" />} />
+                    </>
+                ) : (
+                    <>
+                        <Route path="/onboarding" element={<Onboarding />} />
+                        <Route path="*" element={<Navigate to="/onboarding" />} />
+                    </>
+                )}
             </Routes>
         </BrowserRouter>
     )
