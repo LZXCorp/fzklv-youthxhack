@@ -2,3 +2,139 @@
     width: 70%;
     margin: 0 auto;
 }
+
+.onboard-step {
+    width: 70%;
+    margin: 4rem auto;
+}
+
+.onboard-container {
+    background-color: var(--secondary-color);
+    border-radius: 2rem;
+    padding: 2rem 1rem;
+}
+
+.onboard-input {
+    margin: 12px;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.onboard-input p {
+    margin: 0;
+    font-size: large;
+    text-align: left;
+}
+
+.onboard-input input {
+    padding: 12px 8px;
+    font-size: large;
+    text-align: left;
+    width: 100%;
+}
+
+.onboard-input select {
+    padding: 12px 8px;
+    font-size: large;
+    text-align: left;
+    width: 100%;
+}
+
+.onboard-hidden {
+    display: none;
+}
+
+.box-container {
+    display: flex;
+    justify-content: center
+}
+
+.box {
+    background-color: var(--opposite-color);
+    color: var(--primary-color);
+    border-radius: 2rem;
+    padding: 4px 12px;
+    margin: 1rem 6px;
+}
+
+.box:hover {
+    background-color: var(--secondary-color);
+    color: var(--opposite-color);
+    border-radius: 2rem;
+    padding: 4px 12px;
+    margin: 1rem 6px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.box p {
+    font-size: 1rem;
+}
+
+.onboard-return {
+    padding: 12px 8px;
+    font-size: large;
+    margin-right: 4%;
+    width: 16%;
+}
+
+.onboard-return:hover {
+    background-color: var(--secondary-color);
+    color: var(--opposite-color);
+    padding: 12px 8px;
+    font-size: large;
+    margin-right: 4%;
+    width: 16%;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.onboard-continue {
+    padding: 12px 8px;
+    font-size: large;
+    width: 70%;
+}
+
+.onboard-continue:hover {
+    background-color: var(--secondary-color);
+    color: var(--opposite-color);
+    padding: 12px 8px;
+    font-size: large;
+    width: 70%;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.onboard-finish-container {
+    height: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.onboard-finish-button {
+    margin-top: 12px;
+}
+
+.onboard-finish-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--opposite-color);
+    margin-top: 12px;
+    transition: background-color 0.1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body.light-theme input,
+body.light-theme select {
+    color-scheme: light;
+}
+
+body.dark-theme input,
+body.dark-theme select {
+    color-scheme: dark;
+}
